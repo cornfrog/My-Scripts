@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+if [[ $# -eq 0 ]]; then
+	echo "Error: No File Entered"
+	echo "Usage: addbin <file-name>"
+	exit 1
+else
+	cp $1 ~/workspace/sysdev/Program-Bins/
+	echo "$1 added to Program-Bins/"
+fi

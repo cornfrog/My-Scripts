@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+if [[ $# -eq 0 ]]; then
+	echo "Error: Invalid Usage"
+	echo "Usage: addRepo <repo-name> \"<description>\""
+elif [[ -z "$1" ]]; then
+	echo "Error: No Repository Name Entered"
+elif [[ -z "$2" ]]; then
+	echo "Error: No Description Entered"
+else
+	gh repo create $1 --public --description "$2"
+fi

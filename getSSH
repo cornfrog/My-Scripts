@@ -5,5 +5,5 @@ if [[ $# -eq 0 ]]; then
         echo "Usage: getSSH <repo-name>"
         exit 1
 else
-	echo $(gh repo view $1 --json sshUrl) 	
+	echo $(gh repo view $1 --json sshUrl | grep -o '"sshUrl":"[^"]*' | cut -d'"' -f4) 	
 fi

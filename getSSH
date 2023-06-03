@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+if [[ $# -eq 0 ]]; then
+        echo "Error: No File Entered"
+        echo "Usage: getSSH <repo-name>"
+        exit 1
+else
+	echo $(gh repo view $1 --json sshUrl) 	
+fi

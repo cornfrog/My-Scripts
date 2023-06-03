@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+if [[ $# -eq 0 ]]; then
+	echo "Error: Invalid Usage"
+	echo "Usage: setOrigin <github link>"
+else
+	git remote add origin $1
+fi
